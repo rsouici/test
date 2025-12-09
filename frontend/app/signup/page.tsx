@@ -75,12 +75,12 @@ if (err.response && err.response.data && err.response.data.errors) {
     .map(e => String(e));
 
   setMessage(errorMessages[0] || "Terjadi kesalahan validasi.");
-}
-   } else if (err.response?.data?.message) {
+   } 
+else if (err.response?.data?.message) {
   // Ensure err.response.data.message is converted to a string
   setMessage(String(err.response.data.message)); // <-- ADD String(...)
 }
-    } else {
+    else {
       setMessage("Terjadi kesalahan server. Coba lagi nanti.");
     }
   } finally {
