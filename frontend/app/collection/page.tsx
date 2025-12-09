@@ -67,7 +67,6 @@ export default function CollectionPage() {
         break;
       default:
         filtered.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
-
     }
 
     setFilteredProducts(filtered);
