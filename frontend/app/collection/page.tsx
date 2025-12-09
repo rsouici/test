@@ -216,7 +216,6 @@ export default function CollectionPage() {
                   >
                     <CollectionProductCard
                       product={p}
-                      className="!h-[480px] !rounded-2xl shadow-lg hover:shadow-2xl transition"
                     />
                   </motion.div>
                 ))}
