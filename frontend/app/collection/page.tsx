@@ -66,9 +66,7 @@ export default function CollectionPage() {
         filtered.sort((a, b) => (b.sold_count || 0) - (a.sold_count || 0));
         break;
       default:
-        filtered.sort(
-  (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
-);
+        filtered.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
 
     }
 
