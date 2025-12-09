@@ -67,12 +67,19 @@ const handleSubmit = async () => {
     console.error("❌ Error saat auth:", err);
 
 
-    if (err.response?.data?.errors) {
-      const errors = err.response.data.errors;
-      const errorMessages = Object.values(errors).flat(); 
-      setMessage(errorMessages[0] || "Terjadi kesalahan validasi.");
-    } else if (err.response?.data?.message) {
-      setMessage(err.response.data.message);
+if (err.response && err.response.data && err.response.data.errors) {
+  const errors = err.response.data.errors;
+  // Ensure that each item in errorMessages is a string
+  const errorMessages: string[] = Object.values(errors)
+    .flat()
+    .map(e => String(e));
+
+  setMessage(errorMessages[0] || "Terjadi kesalahan validasi.");
+}
+   } else if (err.response?.data?.message) {
+  // Ensure err.response.data.message is converted to a string
+  setMessage(String(err.response.data.message)); // <-- ADD String(...)
+}
     } else {
       setMessage("Terjadi kesalahan server. Coba lagi nanti.");
     }
