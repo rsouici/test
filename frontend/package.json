@@ -19,7 +19,7 @@
     "framer-motion": "^12.23.22",
     "jsvectormap": "^1.7.0",
     "lucide-react": "^0.545.0",
-    "next": "15.5.4",
+    "next": "15.5.7",
     "next-themes": "^0.4.6",
     "nextjs-toploader": "^3.9.17",
     "nodemailer": "^7.0.10",
